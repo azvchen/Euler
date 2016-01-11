@@ -1,6 +1,8 @@
-import System.Environment
+import PEUtility
 
-prime :: (Integral a) => a -> Bool
-prime n = foldl (\acc x -> if n `mod` x == 0 then False else acc) True [2 .. s n]
-    where s = floor . sqrt . fromIntegral
-
+main :: IO ()
+main = do
+  putStrLn "Check if prime:"
+  number <- getLine
+  let isPrime = prime (read number :: Integer)
+  print isPrime
